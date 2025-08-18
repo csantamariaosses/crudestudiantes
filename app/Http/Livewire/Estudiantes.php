@@ -27,6 +27,8 @@ class Estudiantes extends Component
     public function agregar() {
         $this->accion = "Agregar";
         $this->limpiarCampos();
+        $this->resetErrorBag();
+    
     }
 
     public function edit($id) {
@@ -70,12 +72,18 @@ class Estudiantes extends Component
     public function store(){
 
         if( $this->accion == "Agregar") {
+            $this->validate([
+                'nombres' => 'required|max:50|min:8',
+                'direccion' => 'required|max:50|min:10',
+                'edad' => 'required'
+            ]);
             $this->estudiante = New Estudiante();
             $this->estudiante->nombres = $this->nombres;
             $this->estudiante->direccion = $this->direccion;
             $this->$estudiante->edad = $this->edad;
 
             $this->estudiante->save();
+            $this->dispatchBrowserEvent('closeModalestudianteModalAgrega').
             $this->limpiarCampos();
         } else {
             
@@ -109,8 +117,9 @@ class Estudiantes extends Component
 
 
     public function limpiarCampos(){
+        $this->id = 0;
         $this->nombres = "";
-        $this->apellidos = "";
+        $this->direccion = "";
         $this->edad = 0;
     }
 

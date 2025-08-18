@@ -59,13 +59,13 @@
 
     <!-- Modal Nuevo -->
     @include('components.modalheader')
-    <div class="mb-3">
-        <label for="nombres" class="form-label">Id</label>
-        <input type="text" class="form-control" id="Id" placeholder="Id" wire:model.lazy="_id" disabled>
-    </div>
+
     <div class="mb-3">
         <label for="nombres" class="form-label">Nombres</label>
-        <input type="text" class="form-control" id="nombres" placeholder="nombres" wire:model.lazy="nombres">
+        <input type="text" class="form-control" id="nombres" placeholder="nombres" wire:model.lazy="nombres" required>
+        @error('nombres')
+            <span style="color:red">{{ $message}}</span>
+        @enderror
     </div>
     <div class="mb-3">
         <label for="direccion" class="form-label">Direccion</label>
@@ -83,6 +83,7 @@
     </div>
     @include('components.modalfooter')
     <!-- Fin Modal Nuevo --> 
+
   
     <!-- Modal Confirm Delete --> 
      @include('components.modalConfirmHeaderDelete')
