@@ -16,7 +16,8 @@
         </div>
 
         <br>
-        <p>{{$quepasa}}</p>
+        <p>Explicacion de config de discos para subida de archivos</p>
+        <p>https://www.google.com/search?q=laravel+como+configurar+filesystem+config+para+carga+de+archivos&rlz=1C1GCEA_enCL1137CL1137&oq=laravel+como+configurar+filesystem+config+para+carga+de+archivos&gs_lcrp=EgZjaHJvbWUyBggAEEUYOdIBCjIzNzM1ajBqMTWoAgiwAgHxBX14GVlBHQQc8QV9eBlZQR0EHA&sourceid=chrome&ie=UTF-8</p>
         <br>
 
         <div class="my-5">  
