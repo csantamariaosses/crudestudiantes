@@ -43,7 +43,12 @@ return [
 
         'storage_upload' => [
             'driver' => 'local',
-            'root' => storage_path('storage/app')
+            'root' => storage_path('app/imagenes')
+        ],
+
+        'storage_public' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public')
         ],
 
         'public' => [

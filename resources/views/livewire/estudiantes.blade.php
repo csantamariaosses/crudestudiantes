@@ -41,7 +41,7 @@
                         <td>{{$estudiante->nombres}}</td>
                         <td>{{$estudiante->direccion}}</td>
                         <td>{{$estudiante->edad}}</td>
-                        <td><img src="{{asset('imagenes/'.$estudiante->imagen)}}" width="50"></td>
+                        <td><img src="{{asset('storage/imagenes/'.$estudiante->imagen)}}" width="50"></td>
                         <td>
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#estudianteModalEdita-{{$estudiante->id}}" wire:click="edit({{$estudiante->id}})">Edit</button>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalDelete" wire:click="deleteConfirm({{$estudiante->id}})">Delete</button>
@@ -116,7 +116,7 @@
             </div>            
             <div class="mb-3">
                 <label for="imagen" class="form-label">Imagen actual:</label>
-                <img src="{{asset('imagenes/'.$estudiante->imagen)}}" width="200">
+                <img src="{{asset('storage/imagenes/'.$estudiante->imagen)}}" width="200">
             </div>                        
             <div class="mb-3">
                 <label for="imagenNueva" class="form-label">Nueva imagen:</label>
