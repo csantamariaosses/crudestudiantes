@@ -91,16 +91,20 @@ class Estudiantes extends Component
 
                 $estudiante = Estudiante::find($this->_id);
 
+                // Obtiene el nombre original del archivo
                 $this->imageName = $this->imagen->getClientOriginalName();
-                //public_upload -> public/imagenes
-                //$this->imagen->storeAs('imagenes',$this->imageName, 'public_upload');
+                //public_upload -> public_path() ==> public
+                //                      ( subdir   , nombreArchivo   ,  disco)
+                //$this->imagen->storeAs('imagenes', $this->imageName, 'public_upload');
 
                 // Se sube al store/app/public directorio imagenes
                 // storage_public => /store/app/public (config/filesystem.php)
                 // luego en la vista se referencia en public/storage/imagenes
                 // {{asset('storage/imagenes/'.$estudiante->imagen)}}
                 $this->imagen->storeAs('imagenes',$this->imageName, 'storage_public');
-                //$this->imagen->store('imagenes',$this->imageName);
+
+                // 
+                //$this->imagen->store('storage_upload');
 
                 $estudiante->imagen = $this->imageName;
                 
