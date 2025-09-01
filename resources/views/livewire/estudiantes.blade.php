@@ -43,7 +43,7 @@
                         <td>{{$estudiante->edad}}</td>
                         <td><img src="{{asset('storage/imagenes/'.$estudiante->imagen)}}" width="50"></td>
                         <td>
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#estudianteModalEdita-{{$estudiante->id}}" wire:click="edit({{$estudiante->id}})">Edit</button>
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditaRegistro" wire:click="edit({{$estudiante->id}})">Edit</button>
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#ModalDelete" wire:click="deleteConfirm({{$estudiante->id}})">Delete</button>
                         </td>
                         </tr>
@@ -92,13 +92,12 @@
     <!-- Fin Modal Confirm Delete -->
 
 
-    <!-- Modal Edita -->
-    @foreach( $estudiantes as $estudiante)
-    <div class="modal fade" id="estudianteModalEdita-{{$estudiante->id}}" wire:ignore.self tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal Edita Simplificado -->
+    <div class="modal fade" id="modalEditaRegistro" wire:ignore.self tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Editar Estudiante</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Editar Estudiante Simplificado</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
@@ -115,8 +114,8 @@
                 <input type="number" class="form-control" id="edad" placeholder="edad" wire:model.lazy="edad">
             </div>            
             <div class="mb-3">
-                <label for="imagen" class="form-label">Imagen actual:</label>
-                <img src="{{asset('storage/imagenes/'.$estudiante->imagen)}}" width="200">
+                <label for="imagen" class="form-label">Imagen actual:</label>               
+                <img src="{{asset('storage/imagenes/'.$imagen)}}" width="200">
             </div>                        
             <div class="mb-3">
                 <label for="imagenNueva" class="form-label">Nueva imagen:</label>
@@ -130,7 +129,6 @@
         </div>
     </div>
     </div>            
-    @endforeach
-    <!-- Fin Modal Edita -->
 
+    <!-- Fin Modal Edita Simplificado-->
 </div>

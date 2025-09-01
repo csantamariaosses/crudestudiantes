@@ -38,6 +38,7 @@ class Estudiantes extends Component
         $this->_id = $id;
         $this->nombres = $estudiante->nombres;
         $this->direccion = $estudiante->direccion;
+        $this->imagen = $estudiante->imagen;
         $this->edad = $estudiante->edad;
     }
 
